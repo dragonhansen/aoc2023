@@ -1,4 +1,5 @@
-/Solutions/bin
-/Solutions/obj
-/Test/bin
-/Test/obj
+.vscode/
+Solutions/bin/
+Solutions/obj/
+Test/bin/
+Test/obj/
