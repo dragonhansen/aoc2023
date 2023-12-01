@@ -1,20 +1,19 @@
 using System.Text.RegularExpressions;
-
 namespace Days;
-class Day1 {
-    private static string[] lines = File.ReadAllLines("inputs/input1.txt");
+public class Day1 {
+    private static string[] lines = File.ReadAllLines("../inputs/input1.txt");
 
-    private static void SolvePartOne(string[] calibrationDocument) {
+    public static int SolvePartOne(string[] calibrationDocument) {
         int digitSum = 0;
         foreach (String line in calibrationDocument) {
             String digitString = Regex.Replace(line, "[^0-9.]", "");
             String calibrationValue = "" + digitString.First() + digitString.Last();
             digitSum += int.Parse(calibrationValue);
         }
-        Console.WriteLine($"Part one: {digitSum}");
+        return digitSum;
     }
 
-    private static void SolvePartTwo(string[] calibrationDocument) {
+    public static int SolvePartTwo(string[] calibrationDocument) {
         string[] spelledDigits = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
         int digitSum = 0;
         foreach (String line in calibrationDocument) {
@@ -29,11 +28,11 @@ class Day1 {
             String calibrationValue = "" + digitString.First() + digitString.Last();
             digitSum += int.Parse(calibrationValue);
         }
-        Console.WriteLine($"Part two: {digitSum}");
+        return digitSum;
     }
 
     public static void SolveDayOne() {
-        SolvePartOne(lines);
-        SolvePartTwo(lines);
+        Console.WriteLine($"Part one: {SolvePartOne(lines)}");
+        Console.WriteLine($"Part two: {SolvePartTwo(lines)}");
     }
 }
