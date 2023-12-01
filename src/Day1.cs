@@ -1,6 +1,4 @@
 using System.Text.RegularExpressions;
-using System.Linq;
-using System.ComponentModel;
 
 namespace Days;
 class Day1 {
