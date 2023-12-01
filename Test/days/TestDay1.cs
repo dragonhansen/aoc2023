@@ -13,9 +13,10 @@ public class TestDay1
         Assert.AreEqual(Day1.SolvePartOne(input), 55+11+29+12); 
     }
 
+    [TestMethod]
     public void TestPartTwo()
     {
         // 15 + 16 + 39 + 17
-        Assert.AreEqual(Day1.SolvePartOne(input), 15+16+39+17); 
+        Assert.AreEqual(Day1.SolvePartTwo(input), 15+16+39+17); 
     }
 }
