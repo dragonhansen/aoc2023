@@ -25,7 +25,7 @@ class Day1 {
                 String spelledDigit = spelledDigits[i-1];
                 // Not the most elegant soltion but the first and last letter of a spelled digit are inserted arond the acutal spelled digit
                 // this is done to account for cases such as oneight, sevenine, etc
-                tempLine = tempLine.Replace(spelledDigit, spelledDigit[0] + i.ToString() + spelledDigit[spelledDigit.Length-1]);
+                tempLine = tempLine.Replace(spelledDigit, i.ToString() + spelledDigit[spelledDigit.Length-1]);
             }
             String digitString = Regex.Replace(tempLine, "[^0-9.]", "");
             String calibrationValue = "" + digitString.First() + digitString.Last();
