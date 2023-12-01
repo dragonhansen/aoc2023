@@ -1,7 +1,8 @@
-﻿class Program
+﻿using Days;
+class Program
 {
     static void Main(string[] args)
     {
-        Days.Day1.SolveDayOne();
+        Day1.SolveDayOne();
     }
 }
