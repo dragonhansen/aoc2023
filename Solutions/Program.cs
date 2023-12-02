@@ -3,6 +3,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Day1.SolveDayOne();
+        //Day1.SolveDayOne();
+        Day2.SolveDayTwo();
     }
 }
