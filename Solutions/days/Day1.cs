@@ -1,8 +1,6 @@
 using System.Text.RegularExpressions;
 namespace Days;
 public class Day1 {
-    private static string[] lines = File.ReadAllLines("../inputs/input1.txt");
-
     public static int SolvePartOne(string[] calibrationDocument) {
         int digitSum = 0;
         foreach (String line in calibrationDocument) {
@@ -32,6 +30,7 @@ public class Day1 {
     }
 
     public static void SolveDayOne() {
+        string[] lines = File.ReadAllLines("../inputs/input1.txt");
         Console.WriteLine($"Part one: {SolvePartOne(lines)}");
         Console.WriteLine($"Part two: {SolvePartTwo(lines)}");
     }

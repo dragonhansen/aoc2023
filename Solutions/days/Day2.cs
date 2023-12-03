@@ -1,14 +1,14 @@
 using System.Net.Http.Headers;
+using System.Numerics;
 
 namespace Days;
 public class Day2
 {
-    private static string[] lines = File.ReadAllLines("../inputs/input2.txt");
     private static int sum = 0;
     private static int powerSum = 0;
-    public static void ParseInput(string[] calibrationDocument)
+    public static void ParseInput(string[] input)
     {
-        foreach (String line in calibrationDocument)
+        foreach (String line in input)
         {
             string[] substrings = line.Split(' ').Select(s => s.Trim(':', ',')).ToArray();
             int gameID = int.Parse(substrings[1]);
@@ -73,8 +73,25 @@ public class Day2
         }
     }
 
+    public static int SolvePartOne(string[] input) {
+        ParseInput(input);
+        int returnValue = sum;
+        sum = 0;
+        powerSum = 0;
+        return returnValue;
+    }
+
+    public static int SolvePartTwo(string[] input) {
+        ParseInput(input);
+        int returnValue = powerSum;
+        sum = 0;
+        powerSum = 0;
+        return returnValue;
+    }
+
     public static void SolveDayTwo()
     {
+        string[] lines = File.ReadAllLines("../inputs/input2.txt");
         ParseInput(lines);
         Console.WriteLine($"Part one: {sum}");
         Console.WriteLine($"Part two: {powerSum}");
