@@ -60,7 +60,7 @@ echo "C# test file generated:"
 echo "$test_file"
 
 # Generate empty input txt file
-input_file="inputs/inputDay${day_number}.txt"
+input_file="inputs/input${day_number}.txt"
 touch "$input_file"
 echo "Input file generated:"
 echo "$input_file"
