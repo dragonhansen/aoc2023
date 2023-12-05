@@ -16,13 +16,12 @@ namespace Test {
         [TestMethod]
         public void TestPartOne()
         {
-            // Your test code here
             Assert.AreEqual(Day3.SolvePartOne(input), 4361);
         }
         [TestMethod]
         public void TestPartTwo()
         {
-            // Your test code here
+            Assert.AreEqual(Day3.SolvePartTwo(input), 467835);
         }
     }
 }
