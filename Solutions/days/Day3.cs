@@ -11,7 +11,7 @@ namespace Days {
                 MatchCollection matches = Regex.Matches(line, pattern);
                 foreach(Match match in matches) {
                     string number = match.Value;
-                    int begin = line.IndexOf(match.Value);
+                    int begin = match.Index;
                     int end = begin + number.Length-1;
                     if(CheckIfNumberIsPartNumber(begin, end, i, input)) {
                         sum += int.Parse(number);
