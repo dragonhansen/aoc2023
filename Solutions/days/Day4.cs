@@ -15,7 +15,7 @@ namespace Days {
                 int points = 1;
                 bool zeroPoints = true;
                 foreach(String myNumber in myNumbers) {
-                    // Have to make this check because the input is formatted in a dumb way
+                    // Have to make this check because the input is formatted in a strange way with random blank spaces
                     if (myNumber.Equals("")) {
                         continue;
                     }
@@ -27,12 +27,14 @@ namespace Days {
                 if(zeroPoints) {
                     continue;
                 }
-                // We want to add a copy of the next [points] cards
+                // The inital value of points is 1 (it makes the multiplying proces simpler) so we divide by 2
+                points /= 2;
+                // The number of matching cards is Log2(points) so we add a copy of the next Log2(points) following cards
                 // Aditionally we look how many copies we have of the current card and add that value
-                for(int j = 1; j < Math.Log2(points/2) + 2; j++) {
-                    cardCopies[i+j] += 1 + cardCopies[i];
+                for(int j = 0; j < Math.Log2(points) + 1; j++) {
+                    cardCopies[i+j+1] += 1 + cardCopies[i];
                 }
-                sum += points/2;
+                sum += points;
             }
             return (sum, cardCopies.Sum() + input.Length);
         }
