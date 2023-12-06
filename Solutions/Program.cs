@@ -6,6 +6,7 @@ class Program
         //Day1.SolveDayOne();
         //Day2.SolveDayTwo();
         //Day3.SolveDay3();
-        Day4.SolveDay4();
+        //Day4.SolveDay4();
+        Day5.SolveDay5();
     }
 }
