@@ -15,12 +15,13 @@ namespace Test {
         public void TestPartOne()
         {
             // Test code here
-            Assert.AreEqual(Day4.SolvePartOne(input), 13);
+            Assert.AreEqual(13, Day4.SolveBothParts(input).Item1);
         }
         [TestMethod]
         public void TestPartTwo()
         {
             // Test code here
+            Assert.AreEqual(30, Day4.SolveBothParts(input).Item2);
         }
     }
 }
