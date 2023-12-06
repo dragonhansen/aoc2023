@@ -3,7 +3,7 @@ using System.Diagnostics;
 namespace Days {
     public class Day5
     {
-        public static int SolvePartOne(string[] input)
+        public static long SolvePartOne(string[] input)
         {
             string[] seeds = input[0].Split(": ")[1].Split(" ");
             List<Dictionary<long, long>> maps = new List<Dictionary<long, long>>();
@@ -17,27 +17,26 @@ namespace Days {
                     continue;
                 }
                 string[] values = line.Split(" ");
-                long destintation = int.Parse(values[0]); 
-                long source = int.Parse(values[1]); 
-                long range = int.Parse(values[2]); 
+                long destintation = long.Parse(values[0]); 
+                long source = long.Parse(values[1]); 
+                long range = long.Parse(values[2]); 
                 for (int j = 0; j < range; j++) {
                     maps[mapNumber].Add(source+j, destintation+j);
                 }
             }
+            long[] locationNumbers = new long[seeds.Length];
             for(int i = 0; i < seeds.Length; i++) {
                 long seed = int.Parse(seeds[i]);
                 for(int j = 0; j < mapNumber+1; j++) {
                     Dictionary<long, long> currentMap = maps[j];
-                    if(!currentMap.ContainsKey(seed)) {
-                            continue;
-                        }
-                    
-                    seed = currentMap.GetValueOrDefault(seed);
+                    if(!currentMap.TryGetValue(seed, out long destination)) {
+                        continue;
+                    }
+                    seed = destination;
                 }
-                Console.WriteLine(seed);
-                
+                locationNumbers[i] = seed;
             }
-            return 0;
+            return locationNumbers.Min();
         }
         public static int SolvePartTwo(string[] input)
         {
@@ -47,8 +46,7 @@ namespace Days {
         {
             string[] lines = File.ReadAllLines("../inputs/input5.txt");
             string[] test = File.ReadAllLines("../inputs/day5example.txt");
-            SolvePartOne(test);
-            Console.WriteLine("Part one: ");
+            Console.Write($"Part one: {SolvePartOne(lines)}");
             Console.WriteLine("Part two: ");
         }
     }
